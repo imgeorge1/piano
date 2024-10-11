@@ -1,4 +1,47 @@
 let keysPressed = {};
+var n = 0
+
+while (n <= 6){
+    document.getElementsByClassName("key")[n].addEventListener("click", function () {
+  
+      var clicked = this.innerHTML
+  
+      switch (clicked) {
+        case "d":
+            var note1 = new Audio("assets/do.wav");
+            note1.play();
+            break;
+        case "f":
+            var note2 = new Audio("assets/re.wav");
+            note2.play();
+            break;
+        case "g":
+            var note3 = new Audio("assets/mi.wav");
+            note3.play();
+            break;
+        case "h":
+            var note4 = new Audio("assets/fa.wav");
+            note4.play();
+            break;
+        case "j":
+            var note5 = new Audio("assets/sol.wav");
+            note5.play();
+            break;
+        case "k":
+            var note6 = new Audio("assets/la.wav");
+            note6.play();
+            break;
+        case "l":
+            var note7 = new Audio("assets/si.wav");
+            note7.play();
+            break;
+        default:
+            break;
+      }
+    })
+    n++
+  }
+
 
 document.addEventListener('keydown', function(e) {
     if (keysPressed[e.key]) return;  // If the key is already pressed, return
