@@ -1,26 +1,52 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.set{
+.container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
-.key{
-    height: 200px;
+.set {
+    position: relative; /* Parent div should be relative for absolute positioning of keys */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.key {
+    height: 250px;
     width: 75px;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
+    background-color: white;
+    border: 1px solid black;
+    position: relative; /* Keep white keys relative */
+    margin-right: 5px; /* Add space between the white keys */
 }
 
-.pressed {
-    box-shadow: 0 3px 4px 0 #DBEDF3;
-    opacity: 0.5;
-  }
+.flat {
+    height: 133px;
+    width: 50px;
+    color: white;
+    background-color: black;
+    border: none;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Positioning black keys (flat keys) over white keys */
+.flat.re { left: 55px; }
+.flat.mi { left: 135px; }
+.flat.sol { left: 290px; }
+.flat.la { left: 375px; }
+.flat.si { left: 455px; }
+.black{ top: 0; }
